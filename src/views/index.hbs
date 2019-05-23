@@ -1,0 +1,23 @@
+<div class="container text-center">
+
+        {{#each posts }}
+            <div class="jumbotron">
+                <div>by
+                    <b>{{ this.author.name  }}</b>
+                    on
+                    <small>{{ this.posted_at }}</small>
+                </div>
+
+                <div>
+                    <p>{{ this.text }}</p>
+                </div>
+
+                <div class="row">
+                    <button onclick="actOnPost(event);"
+                            data-post-id="{{ this.id }}">Like
+                    </button>
+                    <span id="likes-count-{{ this.id }}">{{ this.likes_count }}</span>
+                </div>
+            </div>
+        {{/each}}
+</div>
